@@ -25,7 +25,8 @@ public class CompteSimple extends Compte{
 	@Override
 	public void retirer(double mt) {
 		if(mt<=(super.getSolde()+decouvert)) {
-			super.setSolde(mt);
+			double newSolde = super.getSolde() - mt;
+			super.setSolde(newSolde);
 		}else {
 			throw new RuntimeException("Solde insuffisant!");
 		}

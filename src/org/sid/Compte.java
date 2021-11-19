@@ -2,21 +2,24 @@ package org.sid;
 
 public class Compte {
 	
-	private static int code;
+	private static int nbCompte;
+	
+	private int code;
 	
 	private double solde;
 
 	public Compte(double solde) {
-		++code;
+		++nbCompte;
+		code = nbCompte;
 		this.solde = solde;
 	}
 
-	public static int getCode() {
+	public int getCode() {
 		return code;
 	}
 
-	public static void setCode(int code) {
-		Compte.code = code;
+	public void setCode(int code) {
+		this.code = code;
 	}
 
 	public double getSolde() {

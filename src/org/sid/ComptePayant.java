@@ -1,6 +1,8 @@
 package org.sid;
 
 public class ComptePayant extends Compte{
+	
+	private final double taux = 0.05;
 
 	public ComptePayant(double solde) {
 		super(solde);
@@ -13,14 +15,14 @@ public class ComptePayant extends Compte{
 	
 	@Override
 	public void verser(double mt) {
-		double frais = mt * 0.05;
+		double frais = mt * taux;
 		double nouveauMontant = mt - frais;
 		super.verser(nouveauMontant);
 	}
 	
 	@Override
 	public void retirer(double mt) {
-		double frais = mt * 0.05;
+		double frais = mt * taux;
 		double nouveauMontant = mt + frais;
 		super.retirer(nouveauMontant);
 	}

@@ -23,7 +23,7 @@ public class CompteEpargne extends Compte {
 	}
 	
 	public void calculInteret() {
-		double montantInteret =  super.getSolde()*tauxInteret;
+		double montantInteret =  super.getSolde()*tauxInteret/100;
 		double soldefinal = super.getSolde() + montantInteret;
 		super.setSolde(soldefinal);
 	}
